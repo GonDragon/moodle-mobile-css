@@ -178,4 +178,4 @@ page-core-mainmenu-more .ion-wp-log-out {
   color: red;
 }
 
-ion-item>.item-inner{ margin-right: 16px !important }
+.item>* {border: none !important; }
