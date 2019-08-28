@@ -180,3 +180,4 @@ page-core-mainmenu-more .ion-wp-log-out {
 
 .item>* {border: none !important; }
 core-sitehome-index .core-loading-content>ion-list>ion-item { display: none; }
+core-sitehome-index .core-module-buttons { width: 16px; }
