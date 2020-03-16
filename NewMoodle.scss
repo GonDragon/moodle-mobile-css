@@ -386,3 +386,32 @@ nav.fixed-top {
     }
   }
 }
+/* Footer */
+.navbar .info-header {
+  display: none; // Info del footer que se muestra en la barra superior (?)
+}
+
+.footer-main {
+  .infoarea img {
+    max-height: 5em;
+  }
+}
+
+/* Login */
+#page-login-index {
+  h2 img {
+    max-height: 5em;
+  }
+  .card-block {
+    background: #f1f1f1;
+    border-radius: 6px;
+    box-shadow: 2px 2px 8px;
+
+    label,
+    p,
+    span,
+    a {
+      color: #222;
+    }
+  }
+}
