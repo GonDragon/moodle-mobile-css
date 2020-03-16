@@ -1,0 +1,388 @@
+/* Fondo */
+body {
+  background: linear-gradient(#79adce, #15406a);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* Centrar cabecera */
+.header-main {
+  a.navbar-brand {
+    display: block;
+    margin: auto !important;
+  }
+}
+
+/* Pestañas de formato OneTopic */
+.onetopic {
+  $bordersize: 2px;
+  $activecolor: #153377;
+  $activeborder: $bordersize solid $activecolor;
+  ul.nav {
+    border-bottom: $activeborder;
+    a {
+      &.active {
+        color: #ffffff;
+        border: {
+          top: $activeborder;
+          left: $activeborder;
+          right: $activeborder;
+          bottom: $activeborder;
+        }
+        &,
+        > div {
+          background-color: $activecolor !important;
+        }
+      }
+    }
+    li.nav-item {
+      margin-bottom: -$bordersize;
+      border-radius: 6px 6px 0 0;
+      overflow: hidden;
+    }
+  }
+}
+
+/* Margenes en pantallas grandes */
+#page {
+  margin: auto;
+  max-width: 1750px;
+}
+
+/*Borrar Acceso Alternativo*/
+#page-site-index.notloggedin nav.fixed-top .usermenu {
+  display: none;
+}
+
+/* Nuevo Homepage */
+#page-site-index {
+  #region-main {
+    background: none;
+    box-shadow: none;
+  }
+  #page-header {
+    display: none;
+    margin: 0px;
+  }
+  #page {
+    margin-top: 0px;
+  }
+  .sitetopic {
+    padding: 0px !important;
+    > div.no-overflow {
+      display: none !important;
+    }
+    > ul > li {
+      padding: 0;
+    }
+  }
+  .mod-indent-outer {
+    padding: 0 20px 50px 20px !important;
+  }
+}
+
+/* Barra de Bloques */
+
+#page-site-index {
+  #block-region-side-pre {
+    background: white;
+    padding: 0 !important;
+
+    > * {
+      border: none;
+    }
+    .block {
+      margin: 0 !important;
+      &:first-child .content {
+        padding-top: 0.25rem !important;
+      }
+      &.block_html {
+        /* Botones interactivos */
+        .botonlateral {
+          p {
+            margin: 0 !important;
+          }
+          img {
+            min-width: 100%;
+            width: 100%;
+            transition: transform linear 0.1s;
+          }
+          &:hover img {
+            transform: scale(0.98, 0.98);
+          }
+        }
+      }
+      padding: 0;
+      margin: 0;
+      border: none;
+      img {
+        margin: 0.25rem 0 !important;
+        max-width: 100%;
+      }
+      &:not(.block_html) .card-text.content {
+        margin: 0 1.25rem;
+      }
+    }
+    .card-body {
+      padding: 0 !important;
+      margin: 0;
+      border: none;
+      h5 {
+        background: #eee;
+        display: block !important;
+        border-bottom: 1px solid #ddd;
+        padding: 0.5rem 0 !important;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+        min-width: 100%;
+      }
+      .content {
+        margin: 0 !important;
+        border: none;
+        padding: 0 0.5rem;
+        border: none;
+      }
+    }
+  }
+}
+
+/* Barra lateral desplegable */
+#nav-drawer {
+  background: linear-gradient(#0e2345, #79adce);
+  border-right: solid 3px #ccc !important;
+}
+
+/* Imagen invisible al loggearse */
+#page-mod-label-mod img.not-logged,
+.notloggedin img.not-logged {
+  display: block !important;
+}
+
+/* Barra busqueda cursos */
+#coursesearch fieldset.coursesearchbox {
+  margin: auto;
+  input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 100px 0 0 100px;
+    padding: 0.5em 1em;
+  }
+  button[type="submit"] {
+    border-radius: 0 100px 100px 0;
+    padding: 0.5em 1em;
+  }
+}
+
+/* Categorias */
+.course_category_tree .category > .info > .categoryname a {
+  color: #555555;
+}
+
+.category {
+  border-left: 6px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 8px -1px rgba(0, 0, 0, 0.2) !important;
+  margin: 1rem 0;
+  background-color: #fff;
+
+  &.dimmed_category .info .categoryname a {
+    font-style: italic;
+    color: lightgray !important;
+  }
+  &.with_children {
+    > .info > .categoryname {
+      background-image: none !important;
+      margin: 0 !important;
+
+      &::before {
+        text-shadow: -1px 0px 0 #888;
+        content: "\25BC";
+        color: #ccc;
+        display: inline-block;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        transition: 100ms linear transform;
+      }
+    }
+    &.collapsed > .info > .categoryname::before {
+      transform: rotate(-90deg);
+    }
+
+    .content {
+      padding: 0 2em 1em 2em;
+    }
+  }
+  .info {
+    background: none !important;
+  }
+  .content {
+    padding: 0;
+  }
+}
+
+/* Cursos */
+.coursename a.dimmed {
+  color: lightgray !important;
+  font-style: italic;
+
+  &::after {
+    content: " (oculto)";
+    color: gray;
+    vertical-align: super;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}
+
+/* Animaciones Categorias*/
+.category {
+  &:not(.collapsed) > .info {
+    &::before {
+      transform: scaleX(1);
+      transition: 250ms ease-in;
+    }
+    .categoryname a {
+      color: white;
+    }
+  }
+  > .info {
+    position: relative;
+    transform: translateZ(0);
+    transition: color 1000ms;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: orange;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-property: transform;
+      transition: 200ms ease-out;
+      .categoryname a {
+        transition-property: color;
+        transition: 250ms linear;
+      }
+    }
+  }
+}
+
+/* Colores de las categorias generales */
+
+@mixin color-categories($id, $color) {
+  [data-categoryid="#{$id}"],
+  [data-categoryid="#{$id}"] .category,
+  .category-#{$id} .category {
+    border-color: $color;
+  }
+  [data-categoryid="#{$id}"] > .info::before,
+  [data-categoryid="#{$id}"] .category > .info::before,
+  .category-#{$id} .category > .info::before {
+    background: $color;
+  }
+}
+
+@include color-categories("279", steelblue); /* Presencial */
+@include color-categories("280", salmon); /* Virtual */
+@include color-categories("281", khaki); /* Posgrado */
+
+/* Dentro del curso */
+
+#page-course-view-onetopic {
+  /* Cabecera */
+  .header-main {
+    border-bottom: solid 2px #ccc !important;
+  }
+
+  /* Bloques HTML sin bordes */
+  .block_html {
+    &,
+    .card-body {
+      padding: 0 !important;
+      border: none;
+    }
+  }
+  .block_html .card-text.content {
+    &,
+    p {
+      margin: 0 !important;
+    }
+    img {
+      margin: 0;
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  /* Nombre recursos */
+  .instancename {
+    font-size: 1rem;
+  }
+}
+/* Flechas galería light-box*/
+#page-mod-lightboxgallery-view #prevLink {
+  background: 0 0 !important;
+}
+#page-mod-lightboxgallery-view #prevLink::before,
+#page-mod-lightboxgallery-view #prevLink:visited::before {
+  content: "\2329";
+  color: #fff;
+  display: inline-block;
+  font-size: 5em;
+  text-shadow: 1px 1px 0 #000;
+  opacity: 0.7;
+  position: relative;
+  top: 50%;
+  right: 70%;
+}
+#page-mod-lightboxgallery-view #nextLink {
+  background: 0 0 !important;
+}
+#page-mod-lightboxgallery-view #nextLink::before,
+#page-mod-lightboxgallery-view #nextLink:visited::before {
+  content: "\232a";
+  color: #fff;
+  display: inline-block;
+  font-size: 5em;
+  text-shadow: 1px 1px 0 #000;
+  opacity: 0.7;
+  position: relative;
+  top: 50%;
+  left: 70%;
+}
+
+/* Parches */
+/* Barra superior */
+nav.fixed-top {
+  height: 50px;
+}
+
+/*Mensajeria */
+.message-app {
+  .input-group-prepend > span {
+    height: auto;
+  }
+  /* Conversaciones */
+  .header-container {
+    [data-region="view-conversation"] {
+      height: auto;
+    }
+  }
+  .content-message-container {
+    .message {
+      height: auto;
+    }
+  }
+  .footer-container {
+    [data-region="view-conversation"] {
+      height: auto;
+    }
+
+    textarea {
+      max-height: 50px;
+    }
+  }
+}
