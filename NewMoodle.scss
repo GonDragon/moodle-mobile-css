@@ -161,12 +161,12 @@ body {
 /* Barra busqueda cursos */
 #coursesearch fieldset.coursesearchbox {
   margin: auto;
-  input[type="text"] {
+  input[type='text'] {
     border: 1px solid #ccc;
     border-radius: 100px 0 0 100px;
     padding: 0.5em 1em;
   }
-  button[type="submit"] {
+  button[type='submit'] {
     border-radius: 0 100px 100px 0;
     padding: 0.5em 1em;
   }
@@ -195,7 +195,7 @@ body {
 
       &::before {
         text-shadow: -1px 0px 0 #888;
-        content: "\25BC";
+        content: '\25BC';
         color: #ccc;
         display: inline-block;
         font-size: 1.2rem;
@@ -225,7 +225,7 @@ body {
   font-style: italic;
 
   &::after {
-    content: " (oculto)";
+    content: ' (oculto)';
     color: gray;
     vertical-align: super;
     font-size: 0.8rem;
@@ -249,7 +249,7 @@ body {
     transform: translateZ(0);
     transition: color 1000ms;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       z-index: -1;
       top: 0;
@@ -272,21 +272,21 @@ body {
 /* Colores de las categorias generales */
 
 @mixin color-categories($id, $color) {
-  [data-categoryid="#{$id}"],
-  [data-categoryid="#{$id}"] .category,
+  [data-categoryid='#{$id}'],
+  [data-categoryid='#{$id}'] .category,
   .category-#{$id} .category {
     border-color: $color;
   }
-  [data-categoryid="#{$id}"] > .info::before,
-  [data-categoryid="#{$id}"] .category > .info::before,
+  [data-categoryid='#{$id}'] > .info::before,
+  [data-categoryid='#{$id}'] .category > .info::before,
   .category-#{$id} .category > .info::before {
     background: $color;
   }
 }
 
-@include color-categories("279", steelblue); /* Presencial */
-@include color-categories("280", salmon); /* Virtual */
-@include color-categories("281", khaki); /* Posgrado */
+@include color-categories('279', steelblue); /* Presencial */
+@include color-categories('280', salmon); /* Virtual */
+@include color-categories('281', khaki); /* Posgrado */
 
 /* Dentro del curso */
 
@@ -328,7 +328,7 @@ body {
 }
 #page-mod-lightboxgallery-view #prevLink::before,
 #page-mod-lightboxgallery-view #prevLink:visited::before {
-  content: "\2329";
+  content: '\2329';
   color: #fff;
   display: inline-block;
   font-size: 5em;
@@ -343,7 +343,7 @@ body {
 }
 #page-mod-lightboxgallery-view #nextLink::before,
 #page-mod-lightboxgallery-view #nextLink:visited::before {
-  content: "\232a";
+  content: '\232a';
   color: #fff;
   display: inline-block;
   font-size: 5em;
@@ -367,7 +367,7 @@ nav.fixed-top {
   }
   /* Conversaciones */
   .header-container {
-    [data-region="view-conversation"] {
+    [data-region='view-conversation'] {
       height: auto;
     }
   }
@@ -377,13 +377,18 @@ nav.fixed-top {
     }
   }
   .footer-container {
-    [data-region="view-conversation"] {
+    [data-region='view-conversation'] {
       height: auto;
     }
 
     textarea {
       max-height: 50px;
     }
+  }
+  /* Busqueda */
+  [data-region='search-results-container'] {
+    overflow-y: auto;
+    min-height: 100%;
   }
 }
 /* Footer */
